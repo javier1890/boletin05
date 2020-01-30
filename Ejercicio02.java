@@ -13,26 +13,13 @@ public class Ejercicio02 {
 		int azar=(int)(Math.random()*5)+1;
 		int azar2=(int)(Math.random()*5)+1;
 		int[][] t = new int[azar][azar2];
-		
+		boolean simetrica=false;
 		
 		for (int i = 0; i < azar; i++) {
 			for (int j = 0; j < azar2; j++) {
 				t[i][j] = i + j;
 			}
 		}
-		
-		if (azar==azar2) {
-			for (int j = 0;j < azar2; j++) {
-				for (int i = 0; i < azar; i++) {
-					
-				}
-			}
-		}else {
-			System.out.print("\nNo es simetrica");
-		}
-		
-		
-		
 		
 		System.out.println("\nMATRIZ A:");
 		for (int i = 0; i < azar; i++) {
@@ -42,6 +29,34 @@ public class Ejercicio02 {
 			System.out.println("\n");
 		}
 
+		
+		if (azar==azar2) {
+			for (int j = 0;j < azar2; j++) {
+				for (int i = 0; i < azar; i++) {
+					if (t[i][j]!=t[j][i]) {
+						simetrica=true;
+						//System.out.print("\nEs simetrica");
+					}else {
+						simetrica=false;
+						//System.out.print("\nNo es simetrica");
+					}
+				}
+			}
+		}else {
+			simetrica=false;
+		}
+		
+		if (simetrica==true) {
+			System.out.print("\nEs simetrica");
+		}else {
+			System.out.print("\nNo es simetrica");
+		}
+	
+	
+		
+		
+		
 	}
+
 
 }
